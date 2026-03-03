@@ -1,0 +1,171 @@
+@media (max-width: 1300px) {
+  /* -------------------------------------popup--------------------------------- */
+
+  .popup[data-type="shop"] .box {
+    width: 90%;
+  }
+  /* -------------------------------------nav---------------------------------- */
+  nav .navbar-brand {
+    width: 25%;
+  }
+  nav.navbar button {
+    background-color: transparent;
+    width: 40px;
+    padding: 5px;
+    height: 35px;
+    outline: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid var(--mainColor);
+  }
+  nav.navbar button span {
+    width: 90%;
+    margin: auto;
+    height: 2px;
+    background-color: var(--mainColor);
+  }
+  nav.navbar button:focus {
+    outline: none;
+    box-shadow: none;
+    border: 1px solid var(--mainColor);
+  }
+  nav.navbar .collapse {
+    background: rgba(173, 169, 150);
+    background: -webkit-linear-gradient(to right, rgba(234, 234, 234), rgba(219, 219, 219), rgba(242, 242, 242), rgba(173, 169, 150));
+    background: linear-gradient(to right, rgba(234, 234, 234), rgba(219, 219, 219), rgba(242, 242, 242), rgba(173, 169, 150));
+    width: 90%;
+    border-radius: 10px;
+  }
+
+  nav.navbar .collapse ul {
+    width: 100px;
+    margin: auto;
+    text-align: center;
+  }
+  nav.navbar .collapse ul:first-child {
+    padding-top: 20px;
+  }
+
+  nav.navbar .collapse ul:last-child {
+    padding-bottom: 20px;
+  }
+  /* -------------------------------------header---------------------------------- */
+
+  header #Carousel > button {
+    bottom: 10px;
+    top: initial;
+    width: 40px;
+    height: 40px;
+  }
+  header #Carousel > button.next {
+    right: 20px;
+  }
+  header #Carousel > button.prev {
+    right: 70px;
+    left: initial;
+  }
+}
+@media (min-width: 371px) and (max-width: 1300px) {
+  /* -------------------------------------nav---------------------------------- */
+  nav .navbar-brand {
+    width: 20%;
+  }
+  /* -------------------------------------header---------------------------------- */
+  header #Carousel .my-carousel-item .part2 .image {
+    transform: translateY(-30px);
+  }
+
+  header #Carousel .my-carousel-item.active .part2 .image :first-child {
+    width: 80%;
+    left: 50px;
+  }
+  header #Carousel .my-carousel-item .part2 .image :last-child {
+    width: 80%;
+  }
+  header #Carousel .my-carousel-item.active .part2 .image :last-child {
+    transform: translate(-40%, -50%) rotate(-30deg) scale(1);
+  }
+}
+@media (min-width: 577px) and (max-width: 1300px) {
+  /* -------------------------------------popup--------------------------------- */
+
+  .popup[data-type="shop"] .box {
+    width: 75%;
+  }
+  /* -------------------------------------header---------------------------------- */
+
+  header #Carousel .my-carousel-item.active .part2 .image :last-child {
+    transform: translate(-20%, -50%) rotate(-30deg) scale(1);
+  }
+  /* -------------------------------------LATEST---------------------------------- */
+
+  #Latest .product {
+    width: 75%;
+    margin: auto;
+  }
+}
+@media (min-width: 769px) and (max-width: 1300px) {
+  /* -------------------------------------popup--------------------------------- */
+
+  .popup[data-type="shop"] .box {
+    width: 70%;
+  }
+  /* -------------------------------------nav---------------------------------- */
+  nav .navbar-brand {
+    width: 12%;
+  }
+  /* -------------------------------------header---------------------------------- */
+  header #Carousel .my-carousel-item .part2 .image {
+    transform: translateY(0px);
+  }
+}
+@media (min-width: 992px) and (max-width: 1300px) {
+  /* -------------------------------------popup--------------------------------- */
+
+  .popup[data-type="shop"] .box {
+    width: 60%;
+  }
+  /* -------------------------------------nav---------------------------------- */
+  nav.navbar .collapse {
+    background: none;
+    width: initial;
+  }
+  nav.navbar .collapse ul {
+    flex-basis: auto;
+    margin: 0;
+  }
+  nav.navbar .collapse ul:first-child {
+    padding-top: 0px;
+  }
+
+  nav.navbar .collapse ul:last-child {
+    padding-bottom: 0px;
+    text-align: end;
+  }
+  /* -------------------------------------header---------------------------------- */
+  header #Carousel > button {
+    width: 50px;
+    height: 50px;
+  }
+  header #Carousel > button.prev {
+    right: 80px;
+  }
+  /* -------------------------------------LATEST---------------------------------- */
+
+  #Latest .product {
+    width: 100%;
+  }
+  #Latest .part1 ul li {
+    width: 80px;
+    height: 80px;
+  }
+}
+@media (min-width: 1181px) and (max-width: 1300px) {
+  /* -------------------------------------popup--------------------------------- */
+
+  .popup[data-type="shop"] .box {
+    width: 50%;
+  }
+}

@@ -1,0 +1,130 @@
+:root {
+  --mainColor: #fb2527;
+  --firstColor: #fb2527;
+  --secondColor: #107be5;
+  --thirdColor: #d28d12;
+}
+
+* {
+  font-family: "Nunito", sans-serif;
+}
+::selection{
+  background-color: var(--mainColor);
+  color: white;
+}
+.mainBorder {
+  border: 1px solid var(--mainColor);
+}
+.mainButton {
+  border: 1px solid var(--mainColor);
+  background-color: transparent;
+  color: var(--mainColor);
+  transition-duration: 0.5s;
+}
+.mainButton.active {
+  background-color: var(--mainColor);
+  color: white;
+}
+.mainButton:hover {
+  background-color: var(--mainColor);
+  color: white;
+}
+.mainColor {
+  color: var(--mainColor);
+}
+#Featured,
+#Latest,
+.popup .box {
+  background: rgba(173, 169, 150);
+  background: -webkit-linear-gradient(to right, rgba(234, 234, 234), rgba(219, 219, 219), rgba(242, 242, 242), rgba(173, 169, 150));
+  background: linear-gradient(to right, rgba(234, 234, 234), rgba(219, 219, 219), rgba(242, 242, 242), rgba(173, 169, 150));
+}
+.title {
+  position: relative;
+}
+.title h2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, .2);
+}
+.title .image {
+  width: 20%;
+  margin: auto;
+}
+#loading {
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition-duration: 1s;
+  opacity: 1;
+  pointer-events: none;
+}
+#loading.hide {
+  opacity: 0;
+}
+.popup {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  left: 0;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: none;
+}
+.popup.active {
+  display: flex;
+}
+.popup[data-type="shop"].active {
+  display: block;
+}
+
+.popup .box {
+  width: 400px;
+  transform: translateY(-100%);
+  opacity: 0;
+  transition-duration: 1s;
+  cursor: default;
+}
+
+.popup[data-type="shop"] .box {
+  width: 50%;
+  margin: 20px auto;
+}
+
+.popup.active.show .box {
+  transform: translateY(0%);
+  opacity: 1;
+}
+.popup .box .header {
+  position: relative;
+}
+.popup .box .header i {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  font-size: 25px;
+  cursor: pointer;
+}
+.size li{
+  width: 25px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 13px;
+}

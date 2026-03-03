@@ -1,0 +1,227 @@
+.navbar {
+  box-shadow: 0 0.5rem 1rem #0000001a;
+  background: rgba(173, 169, 150, 0.5);
+  background: -webkit-linear-gradient(
+    to right,
+    rgba(234, 234, 234, 0.5),
+    rgba(219, 219, 219, 0.5),
+    rgba(242, 242, 242, 0.5),
+    rgba(173, 169, 150, 0.5)
+  );
+  background: linear-gradient(
+    to right,
+    rgba(234, 234, 234, 0.5),
+    rgba(219, 219, 219, 0.5),
+    rgba(242, 242, 242, 0.5),
+    rgba(173, 169, 150, 0.5)
+  );
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+.navbar.scrolled {
+  background: rgba(173, 169, 150);
+  background: -webkit-linear-gradient(to right, rgba(234, 234, 234), rgba(219, 219, 219), rgba(242, 242, 242), rgba(173, 169, 150));
+  background: linear-gradient(to right, rgba(234, 234, 234), rgba(219, 219, 219), rgba(242, 242, 242), rgba(173, 169, 150));
+}
+.navbar-brand {
+  width: 8%;
+}
+.navbar i {
+  transition-duration: 0.5s;
+  cursor: pointer;
+  font-size: 20px;
+  color: #777;
+}
+.navbar i:hover {
+  color: var(--mainColor);
+}
+.navbar .nav-link {
+  padding: 10px;
+  position: relative;
+  color: #777;
+}
+.navbar .nav-link::before,
+.navbar .nav-link::after {
+  content: "";
+  display: block;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  opacity: 0;
+  transition-duration: 0.5s;
+}
+
+.navbar .nav-link:hover:before,
+.navbar .nav-link:hover:after,
+.navbar .nav-link.active:before,
+.navbar .nav-link.active:after {
+  opacity: 1;
+  transform: translateX(0px);
+}
+
+.navbar .nav-link::after {
+  top: 0;
+  left: 0;
+  border-top: 2px solid var(--mainColor);
+  border-left: 2px solid var(--mainColor);
+  transform: translateX(-15px);
+}
+.navbar .nav-link::before {
+  bottom: 0;
+  right: 0;
+  border-bottom: 2px solid var(--mainColor);
+  border-right: 2px solid var(--mainColor);
+  transform: translateX(15px);
+}
+
+.navbar .nav-link.active {
+  color: var(--mainColor);
+}
+
+/* -------------------------------------header---------------------------------- */
+/* header #Carousel{
+  padding-top: 50px;
+} */
+header #Carousel .my-carousel-inner {
+  position: relative;
+}
+header #Carousel > button {
+  position: absolute;
+  z-index: 10;
+  top: 50%;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+}
+header #Carousel > button.next {
+  right: 30px;
+}
+header #Carousel > button.prev {
+  left: 30px;
+}
+header #Carousel .my-carousel-inner .my-carousel-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+header #Carousel .my-carousel-inner .my-carousel-item.active {
+  z-index: 3;
+}
+header #Carousel .my-carousel-inner .my-carousel-item {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+header #Carousel .my-carousel-inner .my-carousel-item:nth-of-type(1) {
+  background-image: url("../images/home-bg-1.jpg");
+}
+header #Carousel .my-carousel-inner .my-carousel-item:nth-of-type(2) {
+  background-image: url("../images/home-bg-2.jpg");
+}
+header #Carousel .my-carousel-inner .my-carousel-item:nth-of-type(3) {
+  background-image: url("../images/home-bg-3.jpg");
+}
+header #Carousel .my-carousel-inner .my-carousel-item .part1 {
+  display: flex;
+  align-items: center;
+}
+header #Carousel .my-carousel-item .part1 .item {
+  transform: translateX(-100%);
+  transition-duration: 1s;
+  transition-delay: 1s;
+  opacity: 0;
+}
+header #Carousel .my-carousel-item.active .part1 .item {
+  opacity: 1;
+  transform: translateX(0);
+}
+header #Carousel .my-carousel-item .part2 .item {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+header #Carousel .my-carousel-item .part2 .image :first-child {
+  position: relative;
+  transform: translateY(-200px);
+  opacity: 0;
+  transition-duration: 1s;
+  transition-delay: 0.5s;
+}
+header #Carousel .my-carousel-item.active .part2 .image :first-child {
+  transform: translateY(0);
+  opacity: 1;
+}
+header #Carousel .my-carousel-item .part2 .image :last-child {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(0deg) scale(0.8);
+  width: 90%;
+  opacity: 0;
+  transition-duration: 1s;
+}
+header #Carousel .my-carousel-item.active .part2 .image :last-child {
+  transform: translate(-50%, -50%) rotate(-30deg) scale(1);
+  opacity: 1;
+}
+/* -------------------------------------offer---------------------------------- */
+#Offer img {
+  transform: scale(1.1);
+  transition-duration: 1s;
+}
+#Offer .item {
+  transition-duration: 1s;
+  position: relative;
+  overflow: hidden;
+}
+#Offer .item::after {
+  content: "";
+  display: block;
+  width: 110%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  transform: rotate(45deg);
+  background-color: rgba(255, 255, 255, 0.5);
+  transition-duration: 1s;
+}
+
+#Offer .item:hover img {
+  transform: scale(1);
+}
+
+#Offer .item:hover::after {
+  left: -120%;
+}
+/* -------------------------------------LATEST---------------------------------- */
+#Latest .part1 ul li {
+  cursor: pointer;
+}
+#Latest .part1 ul li img {
+  transform: scale(0.9);
+  transition-duration: 0.5s;
+}
+#Latest .part1 ul li img:hover {
+  transform: scale(1.1);
+}
+#Latest .selectedImg {
+  width: 60%;
+  margin: auto;
+}
+#Latest .selectedImg img {
+  width: 100%;
+  margin: auto;
+}
