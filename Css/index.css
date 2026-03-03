@@ -82,6 +82,10 @@
 }
 
 /* -------------------------------------header---------------------------------- */
+header #Carousel{
+  height: 100vh;
+  height: 100dvh;
+}
 header #Carousel .my-carousel-inner {
   position: relative;
 }
