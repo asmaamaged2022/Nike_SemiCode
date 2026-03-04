@@ -1,0 +1,33 @@
+  <div class="col-lg-3 col-sm-6 product text-center mb-4">
+              <div class="item rounded-4 bg-light overflow-hidden">
+                <div class="header">
+                  <p class="text-light">-16%</p>
+                  <div class="selectedImg">
+                    <img src="images/products/1-1.png" alt="" class="img-fluid" />
+                  </div>
+                  <i class="fas fa-search key rounded-circle "></i>
+                  <ul class="list-unstyled d-flex justify-content-center mb-0">
+                    <li class="mainButton rounded-circle me-3 active"></li>
+                    <li class="mainButton rounded-circle me-3"></li>
+                    <li class="mainButton rounded-circle me-3"></li>
+                    <li class="mainButton rounded-circle"></li>
+                  </ul>
+                </div>
+                <div class="body py-3">
+                  <h6>Basketball Shoes</h6>
+                  <div class="value">
+                    <span class="mainColor text-decoration-line-through mx-2 mb-0">200<sup>$</sup></span>
+                    <span class="mb-0">100<sup>$</sup></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+
+
+               <li onclick="changeSelectedImage(this,'${product.images[0]}')" class="mainButton rounded-circle me-3 active"></li>
+            <li onclick="changeSelectedImage(this,'${product.images[1]}')" class="mainButton rounded-circle me-3"></li>
+            <li onclick="changeSelectedImage(this,'${product.images[0]}')" class="mainButton rounded-circle me-3"></li>
+            <li onclick="changeSelectedImage(this,'${product.images[1]}')" class="mainButton rounded-circle"></li>

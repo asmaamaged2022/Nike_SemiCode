@@ -53,7 +53,6 @@
   opacity: 0;
   transition-duration: 0.5s;
 }
-
 .navbar .nav-link:hover:before,
 .navbar .nav-link:hover:after,
 .navbar .nav-link.active:before,
@@ -82,7 +81,7 @@
 }
 
 /* -------------------------------------header---------------------------------- */
-header #Carousel{
+header #Carousel {
   height: 100vh;
   height: 100dvh;
 }
@@ -225,4 +224,68 @@ header #Carousel .my-carousel-item.active .part2 .image :last-child {
 #Latest .selectedImg img {
   width: 100%;
   margin: auto;
+}
+/* -------------------------------------Featured---------------------------------- */
+#Featured .product .header {
+  position: relative;
+}
+#Featured .product .header > p {
+  background-color: var(--mainColor);
+  width: 200px;
+  transform: rotate(45deg);
+  position: absolute;
+  top: 20px;
+  right: -65px;
+}
+#Featured .product .header img {
+  transform: scale(0.8);
+  transition-duration: 1s;
+}
+#Featured .product:hover .header img {
+  transform: scale(1);
+}
+#Featured .product .header i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  margin: auto;
+  opacity: 0;
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition-duration: 0.5s;
+  transition-delay: 0s;
+}
+
+#Featured .product:hover .header i {
+  opacity: 1;
+  bottom: 40px;
+  transition-delay: 0.2s;
+}
+#Featured .product .header i:hover {
+  color: white;
+  background-color: var(--mainColor);
+}
+#Featured .product .header ul {
+  opacity: 0;
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition-duration: 0.5s;
+}
+#Featured .product:hover .header ul {
+  transition-delay: 0.8s;
+  opacity: 1;
+  bottom: 10px;
+}
+#Featured .product .header ul li {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
 }
