@@ -260,6 +260,7 @@ header #Carousel .my-carousel-item.active .part2 .image :last-child {
   transform: translateX(-50%);
   transition-duration: 0.5s;
   transition-delay: 0s;
+  background-color: #F8F9FA;
 }
 
 #Featured .product:hover .header i {
