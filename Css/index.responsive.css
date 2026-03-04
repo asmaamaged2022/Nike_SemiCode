@@ -31,7 +31,7 @@
     box-shadow: none;
     border: 1px solid var(--mainColor);
   }
-  nav.navbar .collapse {
+  nav.navbar .navbar-collapse {
     background: rgba(173, 169, 150);
     background: -webkit-linear-gradient(to right, rgba(234, 234, 234), rgba(219, 219, 219), rgba(242, 242, 242), rgba(173, 169, 150));
     background: linear-gradient(to right, rgba(234, 234, 234), rgba(219, 219, 219), rgba(242, 242, 242), rgba(173, 169, 150));
@@ -39,16 +39,16 @@
     border-radius: 10px;
   }
 
-  nav.navbar .collapse ul {
+  nav.navbar .navbar-collapse ul {
     width: 100px;
     margin: auto;
     text-align: center;
   }
-  nav.navbar .collapse ul:first-child {
+  nav.navbar .navbar-collapse ul:first-child {
     padding-top: 20px;
   }
 
-  nav.navbar .collapse ul:last-child {
+  nav.navbar .navbar-collapse ul:last-child {
     padding-bottom: 20px;
   }
   /* -------------------------------------header---------------------------------- */
@@ -137,19 +137,19 @@
     width: 60%;
   }
   /* -------------------------------------nav---------------------------------- */
-  nav.navbar .collapse {
+  nav.navbar .navbar-collapse  {
     background: none;
     width: initial;
   }
-  nav.navbar .collapse ul {
+  nav.navbar .navbar-collapse ul {
     flex-basis: auto;
     margin: 0;
   }
-  nav.navbar .collapse ul:first-child {
+  nav.navbar .navbar-collapse ul:first-child {
     padding-top: 0px;
   }
 
-  nav.navbar .collapse ul:last-child {
+  nav.navbar .navbar-collapse ul:last-child {
     padding-bottom: 0px;
     text-align: end;
   }
