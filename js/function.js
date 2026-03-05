@@ -34,11 +34,11 @@ function closePopup() {
     popupEle.classList.remove("active");
   }, 500);
 }
-function showListImages(imagesList) {
+function showListImages(imagesList, fromPopupProduct = false) {
   let imagesInLi = ``;
   imagesList.forEach(function (productImage) {
     imagesInLi += ` 
-    <li  onclick="changeSelectedImage(this,'${productImage}')"class="mainBorder rounded-3 me-3 me-md-0 mb-md-3 p-2">
+    <li  onclick="changeSelectedImage(this,'${productImage}')"class=" ${fromPopupProduct ? "" : "mainBorder rounded-3 mb-md-3"} me-3 me-md-0  p-2">
        <img src="images/products/${productImage}" alt="" class="img-fluid" />
     </li>`;
   });
@@ -56,10 +56,25 @@ function showSize(sizeList) {
   let sizeInLi = ``;
   sizeList.forEach(function (productSizes, index) {
     sizeInLi += ` 
-     <li class="mainButton rounded-2 me-2 ${index == 0 ? "active" : ""}">${productSizes}</li>
+     <li class="mainButton rounded-2 me-2 ${index == 0 ? "active" : ""}" onclick="changeActive(this) ; updateSize(this)">${productSizes}</li>
       `;
   });
   return sizeInLi;
+}
+function showColor(ColorList) {
+  let colorInLi = ``;
+
+  ColorList.forEach(function (productColor, index) {
+    colorInLi += `
+      <li 
+        class="rounded-circle me-2 ${index === 0 ? "active" : ""}" 
+        style="background-color:${productColor}; width:16px; height:16px;"
+        onclick="changeActive(this);updateColor(this,'${productColor}')">
+      </li>
+    `;
+  });
+
+  return colorInLi;
 }
 function showLiListInFeatures(List) {
   let Lis = ``;
@@ -83,4 +98,84 @@ function changeActive(that) {
     currentActive = ulEle.querySelector(".active");
   currentActive.classList.remove("active");
   that.classList.add("active");
+}
+function showDiscount(discount) {
+  let value = ``;
+  if (discount) {
+    value = `<p class="text-light">-${discount * 100}%</p>`;
+  }
+  return value;
+}
+function getProduct(id) {
+  return products.find((product) => product.id == id);
+}
+function openProductPopup(id) {
+  let product = getProduct(id),
+    productContentInPopup = document.querySelector(`.popup[data-type="product"] .box`);
+  productContentInPopup.innerHTML = `
+   <div class="row product"
+   data-product-id="${product.id}" 
+  data-selected-color="${product.colors[0]}"
+   data-selected-size="${product.sizes[0]}">
+          <div class="col-md-6">
+            <div class="item">
+              <div class="selectedImg">
+                <img src="images/products/${product.images[0]}" alt="" class="img-fluid" />
+              </div>
+              <div class="imageList">
+                <ul class="list-unstyled d-flex">
+                ${showListImages(product.images, true)}
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="item">
+              <h3>Basketball Shoes</h3>
+              ${showPrice(product.price, product.discount)}
+              <hr />
+              <p>
+               ${product.description}
+              </p>
+
+              <div class="d-flex size mt-3">
+              <div class="label"><h6 class="mb-0 fw-bolder me-2">Size :</h6></div>
+              <div class="value">
+                <ul class="list-unstyled d-flex">
+                 ${showSize(product.sizes)}
+                </ul>
+              </div>
+            </div>
+               
+             <div class="d-flex color my-3">
+              <div class="label"><h6 class="mb-0 fw-bolder me-2">Color :</h6></div>
+              <div class="value">
+                <ul class="list-unstyled d-flex">
+                 ${showColor(product.colors)}
+                </ul>
+              </div>
+            </div>
+            <button class="btn mainButton" onclick="addToCart(${product.id})">Add To Cart</button>
+            </div>
+          </div>
+        </div>
+  `;
+}
+function addToCart(id) {
+  let product = getProduct(id),
+    productEle = document.querySelector(`.product[data-product-id="${product.id}"]`),
+    newOrder = {
+      id: id,
+      color: productEle.getAttribute("data-selected-color"),
+      size: productEle.getAttribute("data-selected-size"),
+    };
+  productCart.push(newOrder);
+}
+function updateSize(that) {
+  let value = that.textContent;
+  that.closest(".product").setAttribute("data-selected-size", value);
+}
+function updateColor(that, color) {
+  let product = that.closest(".product");
+  product.setAttribute("data-selected-color", color);
 }

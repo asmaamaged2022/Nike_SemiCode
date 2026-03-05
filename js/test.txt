@@ -31,3 +31,36 @@
             <li onclick="changeSelectedImage(this,'${product.images[1]}')" class="mainButton rounded-circle me-3"></li>
             <li onclick="changeSelectedImage(this,'${product.images[0]}')" class="mainButton rounded-circle me-3"></li>
             <li onclick="changeSelectedImage(this,'${product.images[1]}')" class="mainButton rounded-circle"></li>
+
+
+
+             <div class="row product">
+          <div class="col-lg-6">
+            <div class="item">
+              <div class="selectedImg">
+                <img src="images/products/17-1.png" alt="" class="img-fluid" />
+              </div>
+              <div class="imageList">
+                <ul class="list-unstyled d-flex">
+                  <li><img src="images/products/17-1.png" alt="" class="img-fluid" /></li>
+                  <li><img src="images/products/17-1.png" alt="" class="img-fluid" /></li>
+                  <li><img src="images/products/17-1.png" alt="" class="img-fluid" /></li>
+                  <li><img src="images/products/17-1.png" alt="" class="img-fluid" /></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="item">
+              <h3>Basketball Shoes</h3>
+              call func price
+              <hr />
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur, aspernatur. Eveniet, fugiat recusandae voluptatum
+                odio placeat aperiam impedit architecto quod modi, possimus qui doloremque, vel aut! Eius totam sed numquam
+              </p>
+              call size func call color func
+              <button class="btn mainButton">Add To Cart</button>
+            </div>
+          </div>
+        </div>

@@ -8,7 +8,7 @@
 * {
   font-family: "Nunito", sans-serif;
 }
-::selection{
+::selection {
   background-color: var(--mainColor);
   color: white;
 }
@@ -46,7 +46,7 @@ body,
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  text-shadow: 2px 2px 2px rgba(0, 0, 0, .2);
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
 }
 .title .image {
   width: 20%;
@@ -99,7 +99,8 @@ body,
   cursor: default;
 }
 
-.popup[data-type="shop"] .box {
+.popup[data-type="shop"] .box,
+.popup[data-type="product"] .box {
   width: 50%;
   margin: 20px auto;
 }
@@ -118,7 +119,12 @@ body,
   font-size: 25px;
   cursor: pointer;
 }
-.size li{
+.popup[data-type="product"] .selectedImg {
+  width: 90%;
+  margin: auto;
+}
+.size li,
+.color li {
   width: 25px;
   height: 25px;
   display: flex;
@@ -127,7 +133,12 @@ body,
   cursor: pointer;
   font-size: 13px;
 }
-.alert{
-  
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, .2);
+.color li.active {
+  box-shadow: 2px 2px 2px var(--mainColor);
+}
+.alert {
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+ul li {
+  cursor: pointer;
 }

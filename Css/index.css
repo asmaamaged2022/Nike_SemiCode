@@ -207,9 +207,6 @@ header #Carousel .my-carousel-item.active .part2 .image :last-child {
   left: -120%;
 }
 /* -------------------------------------LATEST---------------------------------- */
-#Latest .part1 ul li {
-  cursor: pointer;
-}
 #Latest .part1 ul li img {
   transform: scale(0.9);
   transition-duration: 0.5s;
@@ -262,7 +259,6 @@ header #Carousel .my-carousel-item.active .part2 .image :last-child {
   transition-delay: 0s;
   background-color: #F8F9FA;
 }
-
 #Featured .product:hover .header i {
   opacity: 1;
   bottom: 40px;
@@ -290,3 +286,4 @@ header #Carousel .my-carousel-item.active .part2 .image :last-child {
   height: 16px;
   cursor: pointer;
 }
+

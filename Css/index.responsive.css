@@ -1,8 +1,19 @@
 @media (max-width: 1300px) {
   /* -------------------------------------popup--------------------------------- */
 
-  .popup[data-type="shop"] .box {
+  .popup[data-type="shop"] .box,
+  .popup[data-type="product"] .box {
     width: 90%;
+    max-height: 95vh;
+    overflow-y: auto;
+  }
+  .popup[data-type="shop"] .box::-webkit-scrollbar,
+  .popup[data-type="product"] .box::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+  .popup[data-type="product"].active {
+    display: block;
   }
   /* -------------------------------------nav---------------------------------- */
   nav .navbar-brand {
@@ -68,11 +79,17 @@
   }
   /* -------------------------------------Featured---------------------------------- */
   #Featured .product .item {
-    width: 300px;
+    width: 280px;
     margin: auto;
   }
 }
 @media (min-width: 371px) and (max-width: 1300px) {
+  /* -------------------------------------popup--------------------------------- */
+
+  .popup[data-type="shop"] .box,
+  .popup[data-type="product"] .box {
+    width: 75%;
+  }
   /* -------------------------------------nav---------------------------------- */
   nav .navbar-brand {
     width: 20%;
@@ -95,9 +112,9 @@
 }
 @media (min-width: 577px) and (max-width: 1300px) {
   /* -------------------------------------popup--------------------------------- */
-
-  .popup[data-type="shop"] .box {
-    width: 75%;
+  .popup[data-type="shop"] .box,
+  .popup[data-type="product"] .box {
+    width: 50%;
   }
   /* -------------------------------------header---------------------------------- */
 
@@ -118,8 +135,9 @@
 @media (min-width: 769px) and (max-width: 1300px) {
   /* -------------------------------------popup--------------------------------- */
 
-  .popup[data-type="shop"] .box {
-    width: 70%;
+  .popup[data-type="shop"] .box,
+  .popup[data-type="product"] .box {
+    width: 75%;
   }
   /* -------------------------------------nav---------------------------------- */
   nav .navbar-brand {
@@ -132,12 +150,12 @@
 }
 @media (min-width: 992px) and (max-width: 1300px) {
   /* -------------------------------------popup--------------------------------- */
-
-  .popup[data-type="shop"] .box {
-    width: 60%;
+  .popup[data-type="shop"] .box,
+  .popup[data-type="product"] .box {
+    width: 70%;
   }
   /* -------------------------------------nav---------------------------------- */
-  nav.navbar .navbar-collapse  {
+  nav.navbar .navbar-collapse {
     background: none;
     width: initial;
   }
@@ -172,9 +190,4 @@
   }
 }
 @media (min-width: 1181px) and (max-width: 1300px) {
-  /* -------------------------------------popup--------------------------------- */
-
-  .popup[data-type="shop"] .box {
-    width: 50%;
-  }
 }
