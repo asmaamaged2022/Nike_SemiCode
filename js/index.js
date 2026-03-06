@@ -20,6 +20,7 @@ let nextBtn = document.querySelector("#Carousel button.next"),
   }
 })();
 ShopPopUp();
+
 nextBtn.addEventListener("click", function () {
   let currentSlide = document.querySelector("#Carousel .my-carousel-item.active"),
     nextSlide = currentSlide.nextElementSibling ?? document.querySelector("#Carousel .my-carousel-item:first-child"),
@@ -153,44 +154,4 @@ features.forEach(function (product) {
     </div>
    `;
 });
-function ShopPopUp() {
-  shopPopup.innerHTML = ``;
-  productsCart.forEach(function (item) {
-    let product = getProduct(item.id);
-    shopPopup.innerHTML += `
-    <div class="col-md-4 mb-3">
-      <div class="product">
-        <div class="item bg-light rounded-3 p-3">
-          <div class="header">
-            <div class="selectedImg">
-              <img src="images/products/${product.images[0]}" alt="" class="img-fluid" />
-            </div>
-          </div>
-          <div class="body">
-            <p>${product.name}</p>
-           ${showPrice(product.price, product.discount)}
-        <div class="d-flex size mt-3">
-              <div class="label"><h6 class="mb-0 fw-bolder me-2 text-nowrap">Size :</h6></div>
-              <div class="value">
-                <ul class="list-unstyled d-flex">
-                 ${showSize(Array.from(item.size))}
-                </ul>
-              </div>
-            </div>
-               
-             <div class="d-flex color">
-              <div class="label"><h6 class="mb-0 fw-bolder me-2 text-nowrap">Color :</h6></div>
-              <div class="value">
-                <ul class="list-unstyled d-flex">
-                 ${showColor(Array.from(item.color))}
-                </ul>
-              </div>
-            </div>
-          </div>
-          <button class="btn mainButton w-100 mt-2">Remove</button>
-        </div>
-      </div>
-  </div>
-`;
-  });
-}
+

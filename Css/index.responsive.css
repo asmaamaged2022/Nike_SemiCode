@@ -1,6 +1,8 @@
 @media (max-width: 1300px) {
   /* -------------------------------------popup--------------------------------- */
-
+  .popup[data-type="Login"] .box {
+    width: 280px;
+  }
   .popup[data-type="shop"] .box,
   .popup[data-type="product"] .box {
     width: 90%;
@@ -88,7 +90,9 @@
 }
 @media (min-width: 371px) and (max-width: 1300px) {
   /* -------------------------------------popup--------------------------------- */
-
+  .popup[data-type="Login"] .box {
+    width: 350px;
+  }
   .popup[data-type="shop"] .box,
   .popup[data-type="product"] .box {
     width: 75%;
@@ -115,6 +119,9 @@
 }
 @media (min-width: 577px) and (max-width: 1300px) {
   /* -------------------------------------popup--------------------------------- */
+  .popup[data-type="Login"] .box {
+    width: 400px;
+  }
   .popup[data-type="shop"] .box,
   .popup[data-type="product"] .box {
     width: 50%;

@@ -228,10 +228,69 @@ function updateLocalstorage() {
 }
 function createBtn(status, productId) {
   return status == undefined
-    ? ` <button class="btn mainButton" onclick="addToCart(this,${productId})">
+    ? ` <button class="btn mainButton" onclick="addToCart(this,${productId})"data-type="shop" >
                   Add To Cart
                 </button>`
-    : ` <button class="btn mainButton remove" onclick="removeFromCart(this,${productId})">
+    : ` <button class="btn mainButton remove" onclick="removeFromCart(this,${productId})" data-type="shop" >
                   Remove From Cart
                 </button>`;
+}
+function ShopPopUp() {
+  chickEmpty();
+  shopPopup.innerHTML = ``;
+  productsCart.forEach(function (item) {
+    let product = getProduct(item.id);
+    console.log(item);
+    shopPopup.innerHTML += `
+    <div class="col-md-4 mb-3">
+      <div class="product">
+        <div class="item bg-light rounded-3 p-3">
+          <div class="header">
+            <div class="selectedImg">
+              <img src="images/products/${product.images[0]}" alt="" class="img-fluid" />
+            </div>
+          </div>
+          <div class="body">
+            <p>${product.name}</p>
+           ${showPrice(product.price, product.discount)}
+        <div class="d-flex size mt-3">
+              <div class="label"><h6 class="mb-0 fw-bolder me-2 text-nowrap">Size :</h6></div>
+              <div class="value">
+                <ul class="list-unstyled d-flex">
+                 ${showSize([item.size])}
+                </ul>
+              </div>
+            </div>
+               
+             <div class="d-flex color">
+              <div class="label"><h6 class="mb-0 fw-bolder me-2 text-nowrap">Color :</h6></div>
+              <div class="value">
+                <ul class="list-unstyled d-flex">
+                 ${showColor([item.color])}
+                </ul>
+              </div>
+            </div>
+          </div>
+          <button class="btn mainButton w-100 mt-2" onclick="removeBtn(${item.id})">Remove</button>
+        </div>
+      </div>
+  </div>
+`;
+  });
+}
+function removeBtn(id) {
+  let btnInProduct = document.querySelector(`.product[data-product-id="${id}"] [data-type="shop"]`);
+  removeFromCart(btnInProduct, id);
+  chickEmpty();
+}
+function chickEmpty() {
+  let alert = document.querySelector(`.popup[data-type="shop"] .box .alert`),
+    buyBtn = document.querySelector(`.popup[data-type="shop"] .box .buy`);
+  if (productsCart.length == 0) {
+    alert.classList.remove("d-none");
+    buyBtn.classList.add("d-none");
+  } else {
+    alert.classList.add("d-none");
+    buyBtn.classList.remove("d-none");
+  }
 }
