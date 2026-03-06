@@ -12,6 +12,9 @@
     width: 0;
     height: 0;
   }
+  .popup[data-type="shop"]::-webkit-scrollbar {
+    width: 0px;
+  }
   .popup[data-type="product"].active {
     display: block;
   }

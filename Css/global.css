@@ -15,11 +15,18 @@
 .mainBorder {
   border: 1px solid var(--mainColor);
 }
+.mainBg {
+  background-color: var(--mainColor);
+}
 .mainButton {
   border: 1px solid var(--mainColor);
   background-color: transparent;
   color: var(--mainColor);
   transition-duration: 0.5s;
+}
+.mainButton.remove {
+  border: 1px solid var(--bs-warning);
+  color: var(--bs-warning);
 }
 .mainButton.active {
   background-color: var(--mainColor);
@@ -28,6 +35,9 @@
 .mainButton:hover {
   background-color: var(--mainColor);
   color: white;
+}
+.mainButton:hover.remove {
+  background-color: var(--bs-warning);
 }
 .mainColor {
   color: var(--mainColor);
@@ -104,7 +114,20 @@ body,
   width: 50%;
   margin: 20px auto;
 }
-
+.popup[data-type="shop"] {
+  overflow-y: auto;
+}
+.popup[data-type="shop"]::-webkit-scrollbar {
+  width: 10px;
+}
+.popup[data-type="shop"]::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+.popup[data-type="shop"]::-webkit-scrollbar-thumb {
+  background: var(--mainColor);
+  border-radius: 10px;
+}
 .popup.active.show .box {
   transform: translateY(0%);
   opacity: 1;
@@ -141,4 +164,10 @@ body,
 }
 ul li {
   cursor: pointer;
+}
+.popup[data-type="shop"] .box .row p {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

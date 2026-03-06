@@ -66,7 +66,7 @@
         <div class="my-carousel-inner h-100">
           <div class="my-carousel-item h-100" data-Color-name="first-color">
             <div class="container h-100">
-              <div class="row h-100 pt-5">
+              <div class="row h-100 pt-5 pt-lg-0">
                 <div class="col-md-5 part1 pt-5">
                   <div class="item">
                     <h4 class="mainColor">Nike Red Shoes</h4>
@@ -91,7 +91,7 @@
           </div>
           <div class="my-carousel-item h-100" data-Color-name="second-color">
             <div class="container h-100">
-              <div class="row h-100 pt-5">
+              <div class="row h-100 pt-5 pt-lg-0">
                 <div class="col-md-5 part1 pt-5">
                   <div class="item">
                     <h4 class="mainColor">Nike Blue Shoes</h4>
@@ -116,7 +116,7 @@
           </div>
           <div class="my-carousel-item h-100" data-Color-name="third-color">
             <div class="container h-100">
-              <div class="row h-100 pt-5">
+              <div class="row h-100 pt-5 pt-lg-0">
                 <div class="col-md-5 part1 pt-5">
                   <div class="item">
                     <h4 class="mainColor">Nike Yellow Shoes</h4>
@@ -202,10 +202,12 @@
           <h3 class="mainColor">Shop</h3>
           <i class="far fa-times-circle exit mainColor" onclick="closePopup()"></i>
         </div>
-        <div class="alert alert-warning text-center mainBorder">There are no products</div>
+        <div class="alert alert-warning text-center mainBorder d-none">There are no products</div>
+        <div class="row"></div>
+        <button class="btn btn-success w-100 ">Buy Now</button>
       </div>
     </div>
-    <div class="popup"  data-type="product" onclick="closePopup()">
+    <div class="popup" data-type="product" onclick="closePopup()">
       <div class="box py-4 px-3 rounded-4"></div>
     </div>
     <div id="loading">
