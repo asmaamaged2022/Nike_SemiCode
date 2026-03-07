@@ -133,7 +133,7 @@ latest.forEach(function (product) {
 features.forEach(function (product) {
   featuresContentEle.innerHTML += `
    <div class="col-lg-3 col-sm-6 product text-center mb-4">
-      <div class="item rounded-4 bg-light overflow-hidden">
+      <div class="item rounded-4 bg-light overflow-hidden mainBorder">
         <div class="header">
           ${showDiscount(product.discount)}
           <div class="selectedImg">
