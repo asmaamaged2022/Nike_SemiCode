@@ -100,7 +100,6 @@ body,
 .popup[data-type="shop"].active {
   display: block;
 }
-
 .popup .box {
   width: 400px;
   transform: translateY(-100%);
@@ -108,7 +107,6 @@ body,
   transition-duration: 1s;
   cursor: default;
 }
-
 .popup[data-type="shop"] .box,
 .popup[data-type="product"] .box {
   width: 50%;

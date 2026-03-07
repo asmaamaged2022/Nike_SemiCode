@@ -10,7 +10,8 @@ let nextBtn = document.querySelector("#Carousel button.next"),
   latestContentEle = document.querySelector("#Latest .content"),
   featuresContentEle = document.querySelector("#Featured .content .row"),
   productsCart = [],
-  shopPopup = document.querySelector(`.popup[data-type="shop"] .box .row`);
+  shopPopup = document.querySelector(`.popup[data-type="shop"] .box .row`),
+  sections = document.querySelectorAll("header, section");
 
 (function () {
   if (localStorage.getItem("productsCart") == null) {
@@ -20,7 +21,6 @@ let nextBtn = document.querySelector("#Carousel button.next"),
   }
 })();
 ShopPopUp();
-
 nextBtn.addEventListener("click", function () {
   let currentSlide = document.querySelector("#Carousel .my-carousel-item.active"),
     nextSlide = currentSlide.nextElementSibling ?? document.querySelector("#Carousel .my-carousel-item:first-child"),
@@ -40,27 +40,25 @@ prevBtn.addEventListener("click", function () {
 window.addEventListener("DOMContentLoaded", function () {
   carouselSliders[0].classList.add("active");
   loading.classList.add("hide");
-  // to Save active link
-  let savedLink = localStorage.getItem("activeLink");
+  navScroll();
+});
 
-  if (savedLink) {
-    let currentActive = navEle.querySelector(".nav-link.active");
-    if (currentActive) {
-      currentActive.classList.remove("active");
+window.addEventListener("scroll", function () {
+  let scrollPosition = window.scrollY;
+  sections.forEach(function (section) {
+    let sectionTop = section.offsetTop - navEleHight;
+    let sectionHeight = section.offsetHeight;
+    let sectionId = section.getAttribute("id");
+
+    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+      navLinks.forEach((link) => link.classList.remove("active"));
+
+      document.querySelector(`.nav-link[href="#${sectionId}"]`).classList.add("active");
     }
-    let newActive = navEle.querySelector(`a[href="${savedLink}"]`);
-    if (newActive) {
-      newActive.classList.add("active");
-    }
-  }
+  });
 });
-window.addEventListener("scroll", function (e) {
-  if (window.scrollY > navEleHight) {
-    navEle.classList.add("scrolled");
-  } else {
-    navEle.classList.remove("scrolled");
-  }
-});
+window.addEventListener("scroll", navScroll);
+
 navLinks.forEach(function (item) {
   item.addEventListener("click", function (e) {
     e.preventDefault();
@@ -154,4 +152,3 @@ features.forEach(function (product) {
     </div>
    `;
 });
-

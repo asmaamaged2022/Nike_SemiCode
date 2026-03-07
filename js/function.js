@@ -1,3 +1,10 @@
+function navScroll() {
+  if (window.scrollY > navEleHight) {
+    navEle.classList.add("scrolled");
+  } else {
+    navEle.classList.remove("scrolled");
+  }
+}
 function changeMainColor(colorName) {
   let html = document.querySelector("html"),
     newColor = getComputedStyle(html).getPropertyValue(`--${colorName.split("-")[0]}Color`);
@@ -240,7 +247,6 @@ function ShopPopUp() {
   shopPopup.innerHTML = ``;
   productsCart.forEach(function (item) {
     let product = getProduct(item.id);
-    console.log(item);
     shopPopup.innerHTML += `
     <div class="col-md-4 mb-3">
       <div class="product">

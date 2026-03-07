@@ -68,7 +68,9 @@
     padding-bottom: 20px;
   }
   /* -------------------------------------header---------------------------------- */
-
+  header #Carousel .my-carousel-item.active .part2 .image :first-child {
+    bottom: 40px;
+  }
   header #Carousel > button {
     bottom: 10px;
     top: initial;
@@ -108,7 +110,8 @@
 
   header #Carousel .my-carousel-item.active .part2 .image :first-child {
     width: 80%;
-    left: 50px;
+    left: 30px;
+    bottom: 0px;
   }
   header #Carousel .my-carousel-item .part2 .image :last-child {
     width: 80%;
@@ -127,6 +130,9 @@
     width: 50%;
   }
   /* -------------------------------------header---------------------------------- */
+  header #Carousel .my-carousel-item.active .part2 .image :first-child {
+    left: 50px;
+  }
 
   header #Carousel .my-carousel-item.active .part2 .image :last-child {
     transform: translate(-20%, -50%) rotate(-30deg) scale(1);
@@ -154,6 +160,9 @@
     width: 12%;
   }
   /* -------------------------------------header---------------------------------- */
+  header #Carousel .my-carousel-item.active .part2 .image :last-child {
+    transform: translate(-30%, -50%) rotate(-30deg) scale(1);
+  }
   header #Carousel .my-carousel-item .part2 .image {
     transform: translateY(0px);
   }
