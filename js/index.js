@@ -46,7 +46,7 @@ window.addEventListener("DOMContentLoaded", function () {
 window.addEventListener("scroll", function () {
   let scrollPosition = window.scrollY;
   sections.forEach(function (section) {
-    let sectionTop = section.offsetTop - navEleHight;
+    let sectionTop = section.offsetTop - navEleHight - 1;
     let sectionHeight = section.offsetHeight;
     let sectionId = section.getAttribute("id");
 
